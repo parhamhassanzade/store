@@ -4,6 +4,12 @@ import reportWebVitals from "./reportWebVitals";
 
 import "bootstrap/dist/css/bootstrap.css";
 import { Router } from "./route/App.router";
-ReactDOM.render(<Router />, document.getElementById("root"));
+import { ManagerHeader } from "./layout/Manager/ManagerHeader/ManagerHeader.component";
+ReactDOM.render(
+
+// <Router />
+<ManagerHeader/>
+
+, document.getElementById("root"));
 
 reportWebVitals();
