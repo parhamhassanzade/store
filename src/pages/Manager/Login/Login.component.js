@@ -1,4 +1,5 @@
 import { Component } from "react";
+import{Link} from "react-router-dom"
 class Login extends Component {
   render() {
     return (
@@ -51,7 +52,7 @@ class Login extends Component {
             </div>
           </form>
           <div className="d-flex justify-content-start" style={{width:"100%"}}>
-            <a style={{textDecoration:"none"}}href="#">بازگشت به سایت</a>
+            <Link style={{textDecoration:"none"}} to="/">بازگشت به سایت</Link>
           </div>
         </div>
       </div>

@@ -1,15 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import reportWebVitals from "./reportWebVitals";
 
-
-import reportWebVitals from './reportWebVitals';
-import {CustomerHeader} from './layout/Customer/CustomerHeader/CustomerHeader.component';
-import 'bootstrap/dist/css/bootstrap.css';
-ReactDOM.render(
-  <CustomerHeader/>,
-  document.getElementById('root')
-);
-
-document.getElementById("root"));
+import "bootstrap/dist/css/bootstrap.css";
+import { Router } from "./route/App.router";
+ReactDOM.render(<Router />, document.getElementById("root"));
 
 reportWebVitals();
