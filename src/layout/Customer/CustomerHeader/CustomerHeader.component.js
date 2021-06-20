@@ -1,6 +1,6 @@
 import { Component } from "react";
 import style from "../CustomerHeader/CustomerHeader.module.scss";
-import { FaShoppingCart, FaPinterest } from "react-icons/fa";
+import { FaShoppingCart, FaPinterest,FaBars } from "react-icons/fa";
 
 class CustomerHeader extends Component {
   render() {
@@ -20,7 +20,7 @@ class CustomerHeader extends Component {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"><FaBars/></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarText">
             <ul className="navbar-nav mr-auto">
