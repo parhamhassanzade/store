@@ -30,19 +30,19 @@ class ManagerHeader extends Component {
               </li>
             </ul>
 
-            <ul class="nav ms-5 ">
-              <li class="nav-item border border-dark">
-                <a class="nav-link active "  href="#">
+            <ul className="nav ms-5 ">
+              <li className="nav-item border border-dark">
+                <a className="nav-link active "  href="#">
                   سفارش ها
                 </a>
               </li>
-              <li class="nav-item border border-dark">
-                <a class="nav-link" href="#">
+              <li className="nav-item border border-dark">
+                <a className="nav-link" href="#">
                   موجودی قیمت ها
                 </a>
               </li>
-              <li class="nav-item border border-dark">
-                <a class="nav-link" href="#">
+              <li className="nav-item border border-dark">
+                <a className="nav-link" href="#">
                  کالاها
                 </a>
               </li>
