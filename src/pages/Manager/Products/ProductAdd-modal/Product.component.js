@@ -8,7 +8,7 @@ class Product extends Component {
         <ManagerHeader />
         <nav className="my-3 container d-flex justify-content-between">
           <button className="btn btn-success">افزودن کالا</button>
-          <label>مدیریت کالا ها</label>
+          <h4>مدیریت کالا ها</h4>
         </nav>
         <div className="container ">
           <table className="table table-bordered border-dark " dir="rtl">
