@@ -1,5 +1,7 @@
 import { Component } from "react";
 import { ManagerHeader } from "../../../../layout/PageController";
+
+import { Link } from 'react-router-dom';
 class OrderWait extends Component {
   render() {
     return (
@@ -27,9 +29,11 @@ class OrderWait extends Component {
               id="flexRadioDefault2"
              
             />
+            <Link to="/manager/orderDone">
             <label class="form-check-label" for="flexRadioDefault2">
               سفارش های انجام شده
             </label>
+            </Link>
           </div>
           </span>
           <h4>مدیریت سفارش ها</h4>

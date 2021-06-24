@@ -1,26 +1,43 @@
 import { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { MainPage } from "../pages/Customer/MainPage/Mainpage.component";
-import { Product } from "../pages/Customer/ProductPage/Product.component";
-import { Basket } from "../pages/Customer/Basket/Basket.component";
-import { Login } from "../pages/Manager/Login/Login.component";
+import { MainPage, Product, Basket } from "../pages/Customer/PageController";
+import {
+  Login,
+  OrderWait,
+  OrderDone,
+  ManagerProduct,
+  Quntity,
+} from "../pages/Manager/PageController";
 class Router extends Component {
   render() {
     return (
       <BrowserRouter>
         <Switch>
-          <Route path="/product">
-            <Product />
-          </Route>
-          <Route path="/basket">
-            <Basket />
-          </Route>
-          <Route path="/managerLogin">
-            <Login />
-          </Route>
           <Route path="/" exact={true}>
             <MainPage />
           </Route>
+          <Route path="/coustomer/product">
+            <Product />
+          </Route>
+          <Route path="/coustomer/basket">
+            <Basket />
+          </Route>
+          <Route path="/manager/login">
+            <Login />
+          </Route>
+          <Route path="/manager/orderwait">
+            <OrderWait />
+          </Route>
+          <Route path="/manager/orderDone">
+            <OrderDone />
+          </Route>
+          <Route path="/manager/ManagerProduct">
+            <ManagerProduct />
+          </Route>
+          <Route path="/manager/Quntity">
+            <Quntity />
+          </Route>
+
           <Route exact={true}>
             <div>404</div>
           </Route>

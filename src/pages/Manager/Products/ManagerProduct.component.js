@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { ManagerHeader } from "../../../../layout/PageController";
-class Product extends Component {
+import { ManagerHeader } from "../../../layout/PageController";
+class ManagerProduct extends Component {
   state = {};
   render() {
     return (
@@ -47,4 +47,4 @@ class Product extends Component {
   }
 }
 
-export { Product };
+export { ManagerProduct };

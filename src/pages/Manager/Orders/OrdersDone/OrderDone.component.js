@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { ManagerHeader } from "../../../../layout/PageController";
+import { Link } from 'react-router-dom';
 class OrderDone extends Component {
   render() {
     return (
@@ -14,9 +15,11 @@ class OrderDone extends Component {
               name="flexRadioDefault"
               id="flexRadioDefault1"
             />
+            <Link to="/manager/orderwait">
             <label class="form-check-label" for="flexRadioDefault1">
               سفارش های در انتظار
             </label>
+            </Link>
           </div>
           <div class="form-check d-inline-block">
             <input

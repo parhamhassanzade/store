@@ -1,7 +1,7 @@
 import { Component } from "react";
 import style from "../CustomerHeader/CustomerHeader.module.scss";
-import { FaShoppingCart, FaPinterest,FaBars } from "react-icons/fa";
-
+import { FaShoppingCart, FaPinterest, FaBars } from "react-icons/fa";
+import { Link } from "react-router-dom";
 class CustomerHeader extends Component {
   render() {
     return (
@@ -20,20 +20,22 @@ class CustomerHeader extends Component {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"><FaBars/></span>
+            <span className="navbar-toggler-icon">
+              <FaBars />
+            </span>
           </button>
           <div className="collapse navbar-collapse" id="navbarText">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/coustomer/basket">
                   سبد خرید
                   <FaShoppingCart />
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/manager/login">
                   مدیریت
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -43,4 +45,4 @@ class CustomerHeader extends Component {
   }
 }
 
-export  {CustomerHeader};
+export { CustomerHeader };

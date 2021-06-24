@@ -46,8 +46,9 @@ class Login extends Component {
                 type="button"
                 className="btn btn-primary"
                 data-bs-dismiss="modal"
+              
               >
-                ورود
+                <Link style={{color:"white"}} to="/manager/orderwait">ورود</Link>
               </button>
             </div>
           </form>

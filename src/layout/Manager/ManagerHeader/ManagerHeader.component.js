@@ -24,27 +24,27 @@ class ManagerHeader extends Component {
           <div className="collapse navbar-collapse" id="navbarText">
           <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <a className="nav-link" to="/">
+                <Link className="nav-link" to="/">
                   بازگشت به سایت
-                </a>
+                </Link>
               </li>
             </ul>
 
             <ul className="nav ms-5 ">
               <li className="nav-item border border-dark">
-                <a className="nav-link active "  href="#">
+                <Link className="nav-link active "  to="/manager/orderwait">
                   سفارش ها
-                </a>
+                </Link>
               </li>
               <li className="nav-item border border-dark">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/manager/Quntity">
                   موجودی قیمت ها
-                </a>
+                </Link>
               </li>
               <li className="nav-item border border-dark">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/manager/ManagerProduct">
                  کالاها
-                </a>
+                </Link>
               </li>
             </ul>
 

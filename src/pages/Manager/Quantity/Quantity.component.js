@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {ManagerHeader} from "../../../layout/PageController"
 import style from "./Quantify.module.scss";
-class Quntify extends Component {
+class Quntity extends Component {
  
   render() {
     return (
@@ -48,4 +48,4 @@ class Quntify extends Component {
   }
 }
 
-export { Quntify };
+export { Quntity };

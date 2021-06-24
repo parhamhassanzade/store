@@ -1,8 +1,13 @@
 import { Component } from "react";
+import { CustomerHeader } from "../../../layout/PageController";
 class MainPage extends Component {
-
   render() {
-    return <div>this is first page that customer see</div>;
+    return (
+      <>
+        <CustomerHeader />
+        <div>this is first page that customer see</div>
+      </>
+    );
   }
 }
 
