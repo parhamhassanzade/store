@@ -22,7 +22,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "backend": "node server",
+    "backend:dev": "nodemon server"
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +42,13 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ]
+    ],
+    "author": "parham",
+    "license": "MIT"
+  },
+  "devDependencies": {
+    "json-server": "^0.16.3",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.7"
   }
 }

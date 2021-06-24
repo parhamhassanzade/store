@@ -1,40 +1,39 @@
 import { Component } from "react";
 import { ManagerHeader } from "../../../../layout/PageController";
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 class OrderWait extends Component {
   render() {
     return (
       <>
         <ManagerHeader />
         <nav className="my-3 container d-flex justify-content-between">
-            <span>
-          <div class="form-check d-inline-block me-3">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="flexRadioDefault"
-              id="flexRadioDefault1"
-              defaultChecked
-            />
-            <label class="form-check-label" for="flexRadioDefault1">
-              سفارش های در انتظار
-            </label>
-          </div>
-          <div class="form-check d-inline-block">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="flexRadioDefault"
-              id="flexRadioDefault2"
-             
-            />
-            <Link to="/manager/orderDone">
-            <label class="form-check-label" for="flexRadioDefault2">
-              سفارش های انجام شده
-            </label>
-            </Link>
-          </div>
+          <span>
+            <div class="form-check d-inline-block me-3">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault1"
+                defaultChecked
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                سفارش های در انتظار
+              </label>
+            </div>
+            <div class="form-check d-inline-block">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault2"
+              />
+              <Link to="/manager/orderDone">
+                <label class="form-check-label" for="flexRadioDefault2">
+                  سفارش های انجام شده
+                </label>
+              </Link>
+            </div>
           </span>
           <h4>مدیریت سفارش ها</h4>
         </nav>
