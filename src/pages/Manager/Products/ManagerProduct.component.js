@@ -1,10 +1,29 @@
 import React, { Component } from "react";
 import { ManagerHeader } from "../../../layout/PageController";
+
+// import { axios } from "axios";
 class ManagerProduct extends Component {
-  state = {};
+  state = {
+    product: []
+  };
+  async componentDidMount() {
+    const axios=require('axios')
+     await axios.get('http://localhost:3000/Products?parentgroup=لبنیات').then(respose=>{ this.setState({product:respose.data})
+   
+    }).catch(function (error) {
+      console.log(error);
+    })
+  }
   render() {
     return (
       <>
+        
+        {
+          console.log("gvr",this.state.product)
+
+        }
+ 
+
         <ManagerHeader />
         <nav className="my-3 container d-flex justify-content-between">
           <button className="btn btn-success">افزودن کالا</button>

@@ -64,13 +64,13 @@
     },
     {
       "id": "2",
-      "name": "دوغ گاز دار  عالیس",
-      "price": 25,
-      "avatar": "https://cdn.fakercloud.com/avatars/weglov_128.jpg",
-      "parentgroup": "لبنبات",
-      "data": 1624438177,
-      "grop": "دوغ",
-      "Inventory": 7
+      "name": "شیر پر چرب کاله",
+      "price": 21,
+      "avatar": "https://cdn.fakercloud.com/avatars/notbadart_128.jpg",
+      "parentgroup": "لبنیات",
+      "data": 1624438237,
+      "grop": "شیر",
+      "Inventory": 19
     },
     {
       "id": "3",
@@ -85,11 +85,21 @@
     {
       "id": "4",
       "name": "نان سنگگ",
-      "price": 69,
+      "price": 75,
       "avatar": "https://cdn.fakercloud.com/avatars/travishines_128.jpg",
       "parentgroup": "کالاهای اساسی و خواروبار",
       "data": 1624438057,
       "grop": "نان",
+      "Inventory": 5
+    },
+    {
+      "id": "5",
+      "name": "نان لواش",
+      "price": 69,
+      "avatar": "https://cdn.fakercloud.com/avatars/travishines_128.jpg",
+      "parentgroup": "کالاهای اساسی و خواروبار",
+      "data": 1624438057,
+      "grop": "1نان",
       "Inventory": 5
     }
   ],
