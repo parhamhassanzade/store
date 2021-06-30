@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { ManagerHeader } from "../../../layout/PageController";
+import style from "./ManagerProduct.module.scss";
 class ManagerProduct extends Component {
   state = {
     product: [],
     Showproduct: [],
     MaxIteminPage: 5,
-    
   };
 
   componentDidMount() {
@@ -27,7 +27,6 @@ class ManagerProduct extends Component {
 
   //? get limit data
   async getLimitData(pageNumber) {
-    
     const axios = require("axios");
     await axios
       .get(`http://localhost:3000/Products?_page=${pageNumber}&_limit=5`)
@@ -43,7 +42,9 @@ class ManagerProduct extends Component {
     return this.state.Showproduct.map((row, i) => {
       return (
         <tr key={i}>
-          <td>{row.id}</td>
+          <td className="d-flex justify-content-center ">
+            <img style={style} src={row.avatar}></img>
+          </td>
           <th scope="row">{row.name}</th>
           <td>
             {row.parentgroup}/{row.grop}
@@ -69,7 +70,7 @@ class ManagerProduct extends Component {
           <a
             className="page-link"
             onClick={() => {
-            this.getLimitData(i)
+              this.getLimitData(i);
             }}
             href="#"
           >
