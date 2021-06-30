@@ -1,17 +1,22 @@
 import React, { Component } from "react";
 import { ManagerHeader } from "../../../layout/PageController";
-
-// import { axios } from "axios";
 class ManagerProduct extends Component {
   state = {
     product: [],
+    Showproduct: [],
+    MaxIteminPage: 5,
+    
   };
 
-  //? get all data
-  async componentDidMount() {
+  componentDidMount() {
+    this.getLimitData();
+    this.getAllData();
+  }
+
+  async getAllData() {
     const axios = require("axios");
     await axios
-      .get("http://localhost:3000/Products")
+      .get(`http://localhost:3000/Products`)
       .then((respose) => {
         this.setState({ product: respose.data });
       })
@@ -20,8 +25,22 @@ class ManagerProduct extends Component {
       });
   }
 
-  CreateRow = () => {
-    return this.state.product.map((row, i) => {
+  //? get limit data
+  async getLimitData(pageNumber) {
+    
+    const axios = require("axios");
+    await axios
+      .get(`http://localhost:3000/Products?_page=${pageNumber}&_limit=5`)
+      .then((respose) => {
+        this.setState({ Showproduct: respose.data });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  CreateRow() {
+    return this.state.Showproduct.map((row, i) => {
       return (
         <tr key={i}>
           <td>{row.id}</td>
@@ -29,19 +48,42 @@ class ManagerProduct extends Component {
           <td>
             {row.parentgroup}/{row.grop}
           </td>
-          <td>
-            <a href="#">ویرایش</a>
+          <td className="d-flex justify-content-center">
+            <a className="ms-2" href="#">
+              ویرایش{" "}
+            </a>
+            <a href="#">حذف</a>
           </td>
         </tr>
       );
     });
+  }
+  handelPaginationUI = () => {
+    const page = Math.ceil(
+      this.state.product.length / this.state.MaxIteminPage
+    );
+    let btnInPage = [];
+    for (let i = 1; i <= page; i++) {
+      btnInPage.push(
+        <li style={{ listStyleType: "none" }} key={i} className="page-item">
+          <a
+            className="page-link"
+            onClick={() => {
+            this.getLimitData(i)
+            }}
+            href="#"
+          >
+            {i}
+          </a>
+        </li>
+      );
+    }
+    return btnInPage;
   };
 
   render() {
     return (
       <>
-        {}
-
         <ManagerHeader />
         <nav className="my-3 container d-flex justify-content-between">
           <button className="btn btn-success">افزودن کالا</button>
@@ -63,23 +105,8 @@ class ManagerProduct extends Component {
             className="d-flex justify-content-center mt-5"
             aria-label="Page navigation example"
           >
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="#">
-                  1
-                </a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">
-                  2
-                </a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">
-                  3
-                </a>
-              </li>
-            </ul>
+            {this.handelPaginationUI()}
+            <ul className="pagination"></ul>
           </nav>
         </div>
       </>

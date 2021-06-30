@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { MainPage, Product, Basket } from "../pages/Customer/PageController";
+
 import {
   Login,
   OrderWait,
@@ -8,6 +9,7 @@ import {
   ManagerProduct,
   Quntity,
 } from "../pages/Manager/PageController";
+
 class Router extends Component {
   render() {
     return (
