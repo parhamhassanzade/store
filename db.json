@@ -8,7 +8,8 @@
       "totalPrice": 668.00,
       "deliverTime": 1624227132,
       "orderRegister": 1624227132,
-      "deliveryEndTime": 1624227132
+      "deliveryEndTime": 1624227132,
+      "position":"done"
     },
     {
       "id": "2",
@@ -18,7 +19,8 @@
       "totalPrice": 318.00,
       "deliverTime": 1624227072,
       "orderRegister": 1624227072,
-      "deliveryEndTime": 1624227072
+      "deliveryEndTime": 1624227072,
+      "position":"done"
     },
     {
       "id": "3",
@@ -28,7 +30,8 @@
       "totalPrice": 740.00,
       "deliverTime": 1624227012,
       "orderRegister": 1624227012,
-      "deliveryEndTime": 1624227012
+      "deliveryEndTime": 1624227012,
+      "position":"done"
     },
     {
       "id": "4",
@@ -38,7 +41,8 @@
       "totalPrice": 434.00,
       "deliverTime": 1624226952,
       "orderRegister": 1624226952,
-      "deliveryEndTime": 1624226952
+      "deliveryEndTime": 1624226952,
+      "position":"wait"
     },
     {
       "id": "5",
@@ -48,7 +52,8 @@
       "totalPrice": 23.00,
       "deliverTime": 1624226892,
       "orderRegister": 1624226892,
-      "deliveryEndTime": 1624226892
+      "deliveryEndTime": 1624226892,
+      "position":"done"
     },
     {
       "id": "6",
@@ -58,7 +63,8 @@
       "totalPrice": 23.00,
       "deliverTime": 1624226892,
       "orderRegister": 1624226892,
-      "deliveryEndTime": 1624226892
+      "deliveryEndTime": 1624226892,
+      "position":"done"
     },
     {
       "id": "7",
@@ -68,7 +74,8 @@
       "totalPrice": 23.00,
       "deliverTime": 1624226892,
       "orderRegister": 1624226892,
-      "deliveryEndTime": 1624226892
+      "deliveryEndTime": 1624226892,
+      "position":"wait"
     },
     {
       "id": "8",
@@ -78,7 +85,8 @@
       "totalPrice": 33.00,
       "deliverTime": 1624226892,
       "orderRegister": 1624226892,
-      "deliveryEndTime": 1624226892
+      "deliveryEndTime": 1624226892,
+      "position":"wait"
     }
   ],
   "Products": [
