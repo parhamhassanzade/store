@@ -92,7 +92,7 @@ class ManagerProduct extends Component {
         </nav>
         <div className="container ">
           <table className="table table-bordered border-dark " dir="rtl">
-            <thead>
+            <thead style={style}>
               <tr>
                 <th scope="col">ردیف</th>
                 <th scope="col">نام کالا</th>
