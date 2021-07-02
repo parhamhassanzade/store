@@ -3,10 +3,17 @@ import { ManagerHeader } from "../../../../layout/PageController";
 import { Link } from "react-router-dom";
 
 class OrderWait extends Component {
-  state = {
-    OrderWait: [],
-    MaxIteminPage: 5,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      OrderWait: [],
+      MaxIteminPage: 5,
+      value: "",
+    };
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
   componentDidMount() {
     this.getAllData();
@@ -49,7 +56,7 @@ class OrderWait extends Component {
     });
   }
 
-  handelPaginationUI = () => {
+  handlePaginationUI = () => {
     const page = Math.ceil(
       this.state.OrderWait.length / this.state.MaxIteminPage
     );
@@ -71,39 +78,61 @@ class OrderWait extends Component {
     }
     return btnInPage;
   };
+
+  handleInputChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    alert("submitted: " + this.state.value);
+  }
+
   render() {
     return (
       <>
         <ManagerHeader />
         <nav className="my-3 container d-flex justify-content-between">
           <span>
-            <div class="form-check d-inline-block me-3">
+            <div className="form-check d-inline-block me-3">
               <input
-                class="form-check-input"
+                className="form-check-input"
                 type="radio"
                 name="flexRadioDefault"
                 id="flexRadioDefault1"
                 defaultChecked
               />
-              <label class="form-check-label" for="flexRadioDefault1">
+              <label className="form-check-label" htmlFor="flexRadioDefault1">
                 سفارش های در انتظار
               </label>
             </div>
-            <div class="form-check d-inline-block">
+            <div className="form-check d-inline-block">
               <Link to="/manager/orderDone">
                 <input
-                  class="form-check-input"
+                  className="form-check-input"
                   type="radio"
                   name="flexRadioDefault"
                   id="flexRadioDefault2"
                 />
 
-                <label class="form-check-label" for="flexRadioDefault2">
+                <label className="form-check-label" htmlFor="flexRadioDefault2">
                   سفارش های انجام شده
                 </label>
               </Link>
             </div>
           </span>
+          <form
+            className="border border-dark rounded"
+            onSubmit={this.handleSubmit}
+          >
+            <input
+              placeholder="Search..."
+              name="filter"
+              value={this.state.value}
+              onChange={this.handleInputChange}
+            />
+            <input type="submit" className="btn btn-primary" />
+          </form>
           <h4>مدیریت سفارش ها</h4>
         </nav>
         <div className="container ">
@@ -124,7 +153,7 @@ class OrderWait extends Component {
             className="d-flex justify-content-center mt-5"
             aria-label="Page navigation example"
           >
-            {this.handelPaginationUI()}
+            {this.handlePaginationUI()}
             <ul className="pagination"></ul>
           </nav>
         </div>

@@ -2,10 +2,16 @@ import { Component } from "react";
 import { ManagerHeader } from "../../../../layout/PageController";
 import { Link } from "react-router-dom";
 class OrderDone extends Component {
-  state = {
-    OrderDone: [],
-    MaxIteminPage: 5,
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      OrderDone: [],
+      MaxIteminPage: 5,
+    };
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
   componentDidMount() {
     this.getAllData();
@@ -48,7 +54,7 @@ class OrderDone extends Component {
     });
   }
 
-  handelPaginationUI = () => {
+  handlePaginationUI = () => {
     const page = Math.ceil(
       this.state.OrderDone.length / this.state.MaxIteminPage
     );
@@ -70,6 +76,15 @@ class OrderDone extends Component {
     }
     return btnInPage;
   };
+
+  handleInputChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    alert("submitted: " + this.state.value);
+  }
 
   render() {
     return (
@@ -104,6 +119,18 @@ class OrderDone extends Component {
               </label>
             </div>
           </span>
+          <form
+            className="border border-dark rounded"
+            onSubmit={this.handleSubmit}
+          >
+            <input
+              placeholder="Search..."
+              name="filter"
+              value={this.state.value}
+              onChange={this.handleInputChange}
+            />
+            <input type="submit" className="btn btn-primary" />
+          </form>
           <h4>مدیریت سفارش ها</h4>
         </nav>
         <div className="container ">
@@ -124,7 +151,7 @@ class OrderDone extends Component {
             className="d-flex justify-content-center mt-5"
             aria-label="Page navigation example"
           >
-            {this.handelPaginationUI()}
+            {this.handlePaginationUI()}
             <ul className="pagination"></ul>
           </nav>
         </div>
