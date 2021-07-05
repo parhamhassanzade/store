@@ -43,7 +43,7 @@ class ManagerProduct extends Component {
       return (
         <tr key={i}>
           <td className="d-flex justify-content-center ">
-            <img style={style} src={row.avatar}></img>
+            <img style={style.img} src={row.avatar}></img>
           </td>
           <th scope="row">{row.name}</th>
           <td>
