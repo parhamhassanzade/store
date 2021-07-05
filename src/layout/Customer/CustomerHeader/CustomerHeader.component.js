@@ -7,9 +7,9 @@ class CustomerHeader extends Component {
     return (
       <header className="border-bottom  border-dark">
         <nav className="navbar d-flex flex-row-reverse navbar-expand-lg  bg-light p-3">
-          <h1 className="navbar-brand " href="#">
+          <h1 style={{fontSize:"x-large"}} className="navbar-brand">
             پی شاپ
-            <FaPinterest />
+            <FaPinterest className="ms-4" />
           </h1>
           <button
             className="navbar-toggler"
@@ -26,13 +26,13 @@ class CustomerHeader extends Component {
           </button>
           <div className="collapse navbar-collapse" id="navbarText">
             <ul className="navbar-nav mr-auto">
-              <li className="nav-item active">
+              <li className="nav-item active me-5">
                 <Link className="nav-link" to="/coustomer/basket">
                   سبد خرید
                   <FaShoppingCart />
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item ms-5">
                 <Link className="nav-link" to="/manager/login">
                   مدیریت
                 </Link>
