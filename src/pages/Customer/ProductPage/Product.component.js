@@ -65,10 +65,8 @@ class Product extends Component {
               </div>
               <div
                 style={{
-                  backgroundColor: "red",
                   width: "15vw",
                   height: "35vh",
-                  borderRadius: "15px",
                   overflow: "hidden",
                 }}
                 id="imageBox"
@@ -78,6 +76,7 @@ class Product extends Component {
                   sytyle={{
                     height: "100%",
                     width: "100%",
+                    object: "cover",
                   }}
                   src="http://placeimg.com/640/480/food"
                 />
