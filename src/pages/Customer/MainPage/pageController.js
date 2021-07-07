@@ -1,0 +1,1 @@
+export {CardPage}from"./component/CardPage.component"

@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { MainPage, Product, Basket } from "../pages/Customer/PageController";
+import { MainPage, Product, Basket,ProductPage } from "../pages/Customer/PageController";
 
 import {
   Login,
@@ -8,6 +8,7 @@ import {
   OrderDone,
   ManagerProduct,
   Quntity,
+  
 } from "../pages/Manager/PageController";
 
 class Router extends Component {
@@ -20,6 +21,9 @@ class Router extends Component {
           </Route>
           <Route path="/coustomer/product">
             <Product />
+          </Route>
+          <Route path="/coustomer/productpage">
+            <ProductPage />
           </Route>
           <Route path="/coustomer/basket">
             <Basket />
