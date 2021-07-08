@@ -43,7 +43,11 @@ class ManagerProduct extends Component {
       return (
         <tr key={i}>
           <td className="d-flex justify-content-center ">
-            <img style={style.img} src={row.avatar}></img>
+            <img
+              className="rounded-circle"
+              style={{ height: "50px", width: "50px" }}
+              src={row.avatar}
+            />
           </td>
           <th scope="row">{row.name}</th>
           <td>
@@ -92,7 +96,7 @@ class ManagerProduct extends Component {
         </nav>
         <div className="container ">
           <table className="table table-bordered border-dark " dir="rtl">
-            <thead style={style}>
+            <thead>
               <tr>
                 <th scope="col">ردیف</th>
                 <th scope="col">نام کالا</th>
