@@ -9,6 +9,7 @@ class MainPage extends Component {
     this.state = {
       Dairy: [],
       essentialProducts: [],
+      
     };
   }
   componentDidMount() {
@@ -46,14 +47,15 @@ class MainPage extends Component {
   render() {
     return (
       <>
+   
         <CustomerHeader />
         <div>
           <Link
-            to="/coustomer/productpage"
+            to="/coustomer/productspage/لبنیات"
             style={{ textDecoration: "none" }}
             className="d-flex justify-content-end flex-wrap m-5"
           >
-            <h1>محصولات گروه لبنیات</h1>
+            <h2>محصولات گروه لبنیات</h2>
           </Link>
           <section className="d-flex justify-content-end flex-wrap m-5">
             {this.state.Dairy.map((item, index) => {
@@ -71,11 +73,11 @@ class MainPage extends Component {
 
         <div>
           <Link
-            to="/coustomer/productpage"
+            to="/coustomer/productspage/کالاهای اساسی و خواروبار"
             style={{ textDecoration: "none" }}
             className="d-flex justify-content-end flex-wrap m-5 "
           >
-            <h1>محصولات گروه خواروبار </h1>
+            <h2>محصولات گروه کالاهای اساسی و خواروبار </h2>
           </Link>
           <section className="d-flex justify-content-end flex-wrap m-5 ">
             {this.state.essentialProducts.map((item, index) => {
