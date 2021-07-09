@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { CustomerHeader } from "../../../layout/PageController";
-
 import { FaPlusCircle } from "react-icons/fa";
 import {
   Card,
@@ -8,7 +7,6 @@ import {
   Button,
   CardTitle,
   CardText,
-  CardImg,
   Popover,
   PopoverHeader,
   PopoverBody,
@@ -19,14 +17,32 @@ class Product extends Component {
     this.state = {
       name: "React",
       popoverOpen: false,
+      Data: [],
+      PoductData: [],
     };
     this.togglePopover = this.togglePopover.bind(this);
+  }
+  async componentDidMount() {
+    this.setState({ Data: await this.getData() });
+    this.setState({ PoductData:await this.state.Data[0] });
+  }
+  async getData() {
+    const axios = require("axios");
+    const location = window.location.pathname;
+    console.log(location.split("/")[3]);
+    return axios
+      .get(`http://localhost:3000/Products?name=${location.split("/")[3]}`)
+      .then((response) => response.data)
+      .catch((erro) => {
+        console.log(erro);
+      });
   }
   togglePopover() {
     this.setState({ popoverOpen: !this.state.popoverOpen });
   }
   render() {
     const { popoverOpen } = this.state;
+
     return (
       <>
         <CustomerHeader />
@@ -38,13 +54,20 @@ class Product extends Component {
                 id="infoBox"
                 className="d-flex flex-column align-items-end justify-content-center me-5"
               >
-                <CardTitle tag="h5">کالای فلان</CardTitle>
+                <CardTitle tag="h5">{this.state.PoductData.name}</CardTitle>
                 <CardText>
-                  <small className="text-muted">لبنیات </small>
-                  <small className="text-muted"> &rsaquo;شیر</small>
+                  <small className="text-muted">
+                    {this.state.PoductData.parentgroup}{" "}
+                  </small>
+                  <small className="text-muted">
+                    {" "}
+                    &rsaquo;{this.state.PoductData.grop}
+                  </small>
                 </CardText>
                 <CardText>
-                  <small className="text-muted">قیمت: 200000 </small>
+                  <small className="text-muted">
+                    قیمت: {this.state.PoductData.price}{" "}
+                  </small>
                 </CardText>
                 <div>
                   <Button color="success">
@@ -78,7 +101,7 @@ class Product extends Component {
                     width: "100%",
                     object: "cover",
                   }}
-                  src="http://placeimg.com/640/480/food"
+                  src={this.state.PoductData.avatar}
                 />
               </div>
             </CardBody>
@@ -113,8 +136,7 @@ class Product extends Component {
                         width: "500px",
                       }}
                     >
-                      کالای خوبی هست من برای خونه خودمونم بردم عالی بوده بخر
-                      حتما
+                      {this.state.PoductData.discription}
                     </PopoverBody>
                   </Popover>
                 </li>

@@ -9,7 +9,6 @@ class MainPage extends Component {
     this.state = {
       Dairy: [],
       essentialProducts: [],
-      
     };
   }
   componentDidMount() {
@@ -47,7 +46,6 @@ class MainPage extends Component {
   render() {
     return (
       <>
-   
         <CustomerHeader />
         <div>
           <Link
@@ -60,12 +58,17 @@ class MainPage extends Component {
           <section className="d-flex justify-content-end flex-wrap m-5">
             {this.state.Dairy.map((item, index) => {
               return (
-                <CardPage
-                  key={index}
-                  image={item.avatar}
-                  lable={item.name}
-                  price={item.price}
-                />
+                <Link
+                  style={{ textDecoration: "none" }}
+                  to={`/coustomer/product/${item.name}`}
+                >
+                  <CardPage
+                    key={index}
+                    image={item.avatar}
+                    lable={item.name}
+                    price={item.price}
+                  />
+                </Link>
               );
             })}
           </section>
@@ -82,12 +85,17 @@ class MainPage extends Component {
           <section className="d-flex justify-content-end flex-wrap m-5 ">
             {this.state.essentialProducts.map((item, index) => {
               return (
-                <CardPage
-                  key={index}
-                  image={item.avatar}
-                  lable={item.name}
-                  price={item.price}
-                />
+                <Link
+                  style={{ textDecoration: "none" }}
+                  to={`/coustomer/product/${item.name}`}
+                >
+                  <CardPage
+                    key={index}
+                    image={item.avatar}
+                    lable={item.name}
+                    price={item.price}
+                  />
+                </Link>
               );
             })}
           </section>

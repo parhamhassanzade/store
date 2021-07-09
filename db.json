@@ -234,7 +234,8 @@
       "parentgroup": "لبنیات",
       "data": 1624438237,
       "grop": "شیر",
-      "Inventory": 19
+      "Inventory": 19,
+      "discription":"lorem ipsoooommmmmm"
     },
     {
       "id": "2",
@@ -244,7 +245,8 @@
       "parentgroup": "لبنیات",
       "data": 1624438237,
       "grop": "شیر",
-      "Inventory": 19
+      "Inventory": 19,
+      "discription":"lorem ipsoooommmmmm"
     },
     {
       "id": "3",
@@ -254,7 +256,8 @@
       "parentgroup": "کالاهای اساسی و خواروبار",
       "data": 1624438117,
       "grop": "روغن",
-      "Inventory": 39
+      "Inventory": 39,
+      "discription":"lorem ipsoooommmmmm"
     },
     {
       "id": "4",
@@ -274,7 +277,8 @@
       "parentgroup": "کالاهای اساسی و خواروبار",
       "data": 1624438057,
       "grop": "نان",
-      "Inventory": 5
+      "Inventory": 5,
+      "discription":"lorem ipsoooommmmmm"
     },
     {
       "id": "6",
@@ -284,7 +288,8 @@
       "parentgroup": "لبنیات",
       "data": 1624438237,
       "grop": "خامه",
-      "Inventory": 12
+      "Inventory": 12,
+      "discription":"lorem ipsoooommmmmm"
     },
     {
       "id": "7",
@@ -294,27 +299,30 @@
       "parentgroup": "لبنیات",
       "data": 1624438237,
       "grop": "خامه",
-      "Inventory": 2
+      "Inventory": 2,
+      "discription":"lorem ipsoooommmmmm"
     },
     {
       "id": "8",
-      "name": "برنج ایران ",
+      "name": "برنج ایران",
       "price": 69,
       "avatar": "https://cdn.fakercloud.com/avatars/travishines_128.jpg",
       "parentgroup": "کالاهای اساسی و خواروبار",
       "data": 1624438057,
       "grop": "برنج",
-      "Inventory": 5
+      "Inventory": 5,
+      "discription":"lorem ipsoooommmmmm"
     },
     {
       "id": "9",
-      "name": "برنج ایران دانه بلند ",
+      "name": "برنج ایران دانه بلند",
       "price": 75,
       "avatar": "https://cdn.fakercloud.com/avatars/travishines_128.jpg",
       "parentgroup": "کالاهای اساسی و خواروبار",
       "data": 1624438057,
       "grop": "برنج",
-      "Inventory": 15
+      "Inventory": 15,
+      "discription":"lorem ipsoooommmmmm"
     }
   ],
   "GroupProducts": [

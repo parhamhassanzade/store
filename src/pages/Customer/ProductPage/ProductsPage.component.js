@@ -3,6 +3,7 @@ import Sidebar from "react-sidebar";
 import { useHistory, useLocation } from "react-router-dom";
 import { CustomerHeader } from "../../../layout/PageController";
 import { CardPage } from "../MainPage/component/CardPage.component";
+import { Link } from "react-router-dom";
 const mql = window.matchMedia(`(min-width: 800px)`);
 class ProductsPage extends Component {
   constructor(props) {
@@ -95,12 +96,17 @@ class ProductsPage extends Component {
             <section className="d-flex justify-content-end flex-wrap m-5">
               {this.state.Cardvalue.map((item, index) => {
                 return (
+                  <Link
+                  style={{ textDecoration: "none" }}
+                  to={`/coustomer/product/${item.name}`}
+                >
                   <CardPage
                     key={index}
                     image={item.avatar}
                     lable={item.name}
                     price={item.price}
                   />
+                  </Link>
                 );
               })}
             </section>
