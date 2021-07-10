@@ -19,8 +19,8 @@ class Quntity extends Component {
 
   handleSetvalue() {
     let axios = require("axios");
-    this.state.changes.map(async(item) => {
-    await axios
+    this.state.changes.map(async (item) => {
+      await axios
         .patch(`http://localhost:3000/Products/${item.productName}`, {
           [item.entity]: item.newValue,
         })
@@ -41,7 +41,6 @@ class Quntity extends Component {
         },
       ],
     });
-
   }
 
   async getAllData() {
@@ -85,7 +84,14 @@ class Quntity extends Component {
             />
           </td>
           <td>
-            <input  type="number" defaultValue={row.Inventory} />
+            <input
+              onChange={(e) =>
+                this.handleChangevalue(e.target.value, row.id, e.target.name)
+              }
+              type="number"
+              name="Inventory"
+              defaultValue={row.Inventory}
+            />
           </td>
         </tr>
       );
@@ -120,7 +126,6 @@ class Quntity extends Component {
       <>
         <ManagerHeader />
         <nav className="my-3 container d-flex justify-content-between">
-       
           <button
             onClick={() => this.handleSetvalue()}
             className="btn border border-dark"
