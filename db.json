@@ -5,7 +5,7 @@
       "name": "علی احمدی",
       "address": "تهران",
       "phone": "031456852",
-      "totalPrice": 668.00,
+      "totalPrice": 668,
       "deliverTime": 1624227132,
       "orderRegister": 1624227132,
       "deliveryEndTime": 1624227132,
@@ -33,7 +33,7 @@
       "name": "پرهام حسن زاده",
       "address": "اصفهان",
       "phone": "+989138090933",
-      "totalPrice": 318.00,
+      "totalPrice": 318,
       "deliverTime": 1624227072,
       "orderRegister": 1624227072,
       "deliveryEndTime": 1624227072,
@@ -61,7 +61,7 @@
       "name": "جواد جوادی",
       "address": "اصفهان",
       "phone": "854-330-3395",
-      "totalPrice": 740.00,
+      "totalPrice": 740,
       "deliverTime": 1624227012,
       "orderRegister": 1624227012,
       "deliveryEndTime": 1624227012,
@@ -89,7 +89,7 @@
       "name": "حسین موحدیان",
       "address": "کرمانشاه",
       "phone": "5258845052",
-      "totalPrice": 434.00,
+      "totalPrice": 434,
       "deliverTime": 1624226952,
       "orderRegister": 1624226952,
       "deliveryEndTime": 1624226952,
@@ -117,7 +117,7 @@
       "name": "ابراهیم مولویان",
       "address": "تهران",
       "phone": "(712) 854-1959",
-      "totalPrice": 23.00,
+      "totalPrice": 23,
       "deliverTime": 1624226892,
       "orderRegister": 1624226892,
       "deliveryEndTime": 1624226892,
@@ -145,7 +145,7 @@
       "name": "اکبر عبدی",
       "address": "تهران",
       "phone": "854-1959",
-      "totalPrice": 23.00,
+      "totalPrice": 23,
       "deliverTime": 1624226892,
       "orderRegister": 1624226892,
       "deliveryEndTime": 1624226892,
@@ -173,7 +173,7 @@
       "name": "ابراهیم زندی",
       "address": "یزد",
       "phone": "465248",
-      "totalPrice": 23.00,
+      "totalPrice": 23,
       "deliverTime": 1624226892,
       "orderRegister": 1624226892,
       "deliveryEndTime": 1624226892,
@@ -201,7 +201,7 @@
       "name": "سوگند مولویان",
       "address": "تهران",
       "phone": "7121959",
-      "totalPrice": 33.00,
+      "totalPrice": 33,
       "deliverTime": 1624226892,
       "orderRegister": 1624226892,
       "deliveryEndTime": 1624226892,
@@ -235,7 +235,7 @@
       "data": 1624438237,
       "grop": "شیر",
       "Inventory": 19,
-      "discription":"lorem ipsoooommmmmm"
+      "discription": "lorem ipsoooommmmmm"
     },
     {
       "id": "2",
@@ -246,7 +246,7 @@
       "data": 1624438237,
       "grop": "شیر",
       "Inventory": 19,
-      "discription":"lorem ipsoooommmmmm"
+      "discription": "lorem ipsoooommmmmm"
     },
     {
       "id": "3",
@@ -257,7 +257,7 @@
       "data": 1624438117,
       "grop": "روغن",
       "Inventory": 39,
-      "discription":"lorem ipsoooommmmmm"
+      "discription": "lorem ipsoooommmmmm"
     },
     {
       "id": "4",
@@ -278,7 +278,7 @@
       "data": 1624438057,
       "grop": "نان",
       "Inventory": 5,
-      "discription":"lorem ipsoooommmmmm"
+      "discription": "lorem ipsoooommmmmm"
     },
     {
       "id": "6",
@@ -289,7 +289,7 @@
       "data": 1624438237,
       "grop": "خامه",
       "Inventory": 12,
-      "discription":"lorem ipsoooommmmmm"
+      "discription": "lorem ipsoooommmmmm"
     },
     {
       "id": "7",
@@ -300,7 +300,7 @@
       "data": 1624438237,
       "grop": "خامه",
       "Inventory": 2,
-      "discription":"lorem ipsoooommmmmm"
+      "discription": "lorem ipsoooommmmmm"
     },
     {
       "id": "8",
@@ -311,7 +311,7 @@
       "data": 1624438057,
       "grop": "برنج",
       "Inventory": 5,
-      "discription":"lorem ipsoooommmmmm"
+      "discription": "lorem ipsoooommmmmm"
     },
     {
       "id": "9",
@@ -322,7 +322,14 @@
       "data": 1624438057,
       "grop": "برنج",
       "Inventory": 15,
-      "discription":"lorem ipsoooommmmmm"
+      "discription": "lorem ipsoooommmmmm"
+    },
+    {
+      "name": "شیر تازه",
+      "parentgroup": "لبنیات",
+      "discription": "شیر خوبیه بخورین",
+      "createdAt": 1625950418704,
+      "id": "nAy5IkU"
     }
   ],
   "GroupProducts": [

@@ -46,7 +46,7 @@ class Quntity extends Component {
             <input type="number" defaultValue={row.price} />
           </td>
           <td>
-            <input type="number" defaultValue={row.Inventory} />
+            <input  type="number" defaultValue={row.Inventory} />
           </td>
         </tr>
       );
