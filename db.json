@@ -234,7 +234,7 @@
       "parentgroup": "لبنیات",
       "data": 1624438237,
       "grop": "شیر",
-      "Inventory": "20",
+      "Inventory": 19,
       "discription": "lorem ipsoooommmmmm"
     },
     {
@@ -323,6 +323,13 @@
       "grop": "برنج",
       "Inventory": 15,
       "discription": "lorem ipsoooommmmmm"
+    },
+    {
+      "name": "شیر تازه",
+      "parentgroup": "لبنیات",
+      "discription": "شیر خوبیه بخورین",
+      "createdAt": 1625950418704,
+      "id": "nAy5IkU"
     }
   ],
   "GroupProducts": [

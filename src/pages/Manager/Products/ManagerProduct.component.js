@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { ManagerHeader } from "../../../layout/PageController";
 import style from "./ManagerProduct.module.scss";
+import { ModalsAdd } from "./ModalsAdd.component";
+import { ModalsEdit } from "./ModalsEdit.component";
 class ManagerProduct extends Component {
   state = {
     product: [],
@@ -16,7 +18,7 @@ class ManagerProduct extends Component {
   handleDelete(rowId) {
     const arrayCopy = this.state.Showproduct.filter((row) => row.id !== rowId);
     this.setState({ Showproduct: arrayCopy });
-    alert('item deleted')
+    alert("item deleted");
   }
 
   async getAllData() {
@@ -60,9 +62,15 @@ class ManagerProduct extends Component {
             {row.parentgroup}/{row.grop}
           </td>
           <td className="d-flex justify-content-center">
-            <a className="ms-2" style={{ textDecoration: "none" }} href="#">
-              ویرایش{" "}
-            </a>
+            <ModalsEdit
+              buttonLabel={"ویرایش "}
+              data={{
+                index:row.id,
+                name: row.name,
+                parentgroup: row.parentgroup,
+                discription: row.discription,
+              }}
+            />
             <a
               href="#"
               style={{ textDecoration: "none" }}
@@ -103,7 +111,7 @@ class ManagerProduct extends Component {
       <>
         <ManagerHeader />
         <nav className="my-3 container d-flex justify-content-between">
-          <button className="btn btn-success">افزودن کالا</button>
+          <ModalsAdd buttonLabel={"افزودن کالا"} />
           <h4>مدیریت کالا ها</h4>
         </nav>
         <div className="container ">

@@ -85,14 +85,7 @@ class Quntity extends Component {
             />
           </td>
           <td>
-            <input
-              type="number"
-              onChange={(e) =>
-                this.handleChangevalue(e.target.value, row.id, "Inventory")
-              }
-              defaultValue={row.Inventory}
-              name="Inventory"
-            />
+            <input  type="number" defaultValue={row.Inventory} />
           </td>
         </tr>
       );
