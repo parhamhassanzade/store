@@ -1,21 +1,29 @@
 import { Component } from "react";
 import{Link} from "react-router-dom"
 class Login extends Component {
+  constructor(){
+    super()
+    this.state={
+      username:[],
+      password:[]
+
+    }
+  }
   render() {
     return (
       <div
-        style={{ height: "100vh" }}
+        style={{ height: "100vh",background: "linear-gradient(to right,gray, white)" }}
         className={"d-flex justify-content-center align-items-center"}
       >
         <div
           className="card d-flex justify-content-center align-items-center border-dark p-5"
-          style={{ width: "50rem" }}
+          style={{ width: "30rem",boxShadow:"5px 5px 15px black" }}
         >
-          <h2>ورود به پنل مدیریت فروشگاه پی شاپ</h2>
+          <h5 className="m-2">ورود به پنل مدیریت فروشگاه پی شاپ</h5>
           <form className="row  needs-validation " noValidate>
             <div className="mb-3 row ">
               <label className="form-label d-flex flex-row-reverse ">
-                {" "}
+
                 : نام کاربری
               </label>
               <input
