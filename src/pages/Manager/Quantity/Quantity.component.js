@@ -43,10 +43,10 @@ class Quntity extends Component {
         <tr key={i}>
           <td>{row.name}</td>
           <td>
-            <input type="number" value={row.price}  />
+            <input type="number" defaultValue={row.price} />
           </td>
           <td>
-            <input type="number" value={row.Inventory}  />
+            <input type="number" defaultValue={row.Inventory} />
           </td>
         </tr>
       );
