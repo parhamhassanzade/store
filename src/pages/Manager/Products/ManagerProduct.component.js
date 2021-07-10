@@ -13,6 +13,11 @@ class ManagerProduct extends Component {
     this.getAllData();
   }
 
+  handleDelete(rowId){
+    const arrayCopy = this.state.Showproduct.filter((row) => row.id !== rowId);
+    this.setState({Showproduct: arrayCopy});
+  }
+
   async getAllData() {
     const axios = require("axios");
     await axios
@@ -57,7 +62,7 @@ class ManagerProduct extends Component {
             <a className="ms-2" href="#">
               ویرایش{" "}
             </a>
-            <a href="#">حذف</a>
+            <a href="#"onClick={()=>this.handleDelete(row.id)}>حذف</a>
           </td>
         </tr>
       );
