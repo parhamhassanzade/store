@@ -6,10 +6,42 @@ class Quntity extends Component {
     quantify: [],
     Showquantify: [],
     MaxIteminPage: 5,
+    changes: [],
   };
   componentDidMount() {
     this.getAllData();
     this.getLimitData();
+  }
+
+  // componentDidUpdate() {
+  //   this.handleChangevalue();
+  // }
+
+  handleSetvalue() {
+    let axios = require("axios");
+    this.state.changes.map(async(item) => {
+    await axios
+        .patch(`http://localhost:3000/Products/${item.productName}`, {
+          [item.entity]: item.newValue,
+        })
+        .then((res) => console.log(res.data))
+        .catch((err) => console.log(err));
+    });
+  }
+
+  handleChangevalue(newValue, productName, entity) {
+    console.log(newValue, productName, entity);
+    this.setState({
+      changes: [
+        ...this.state.changes,
+        {
+          productName: productName,
+          newValue: newValue,
+          entity: entity,
+        },
+      ],
+    });
+
   }
 
   async getAllData() {
@@ -43,10 +75,24 @@ class Quntity extends Component {
         <tr key={i}>
           <td>{row.name}</td>
           <td>
-            <input type="number" defaultValue={row.price} />
+            <input
+              type="number"
+              onChange={(e) =>
+                this.handleChangevalue(e.target.value, row.id, e.target.name)
+              }
+              defaultValue={row.price}
+              name="price"
+            />
           </td>
           <td>
-            <input type="number" defaultValue={row.Inventory} />
+            <input
+              type="number"
+              onChange={(e) =>
+                this.handleChangevalue(e.target.value, row.id, "Inventory")
+              }
+              defaultValue={row.Inventory}
+              name="Inventory"
+            />
           </td>
         </tr>
       );
@@ -81,7 +127,13 @@ class Quntity extends Component {
       <>
         <ManagerHeader />
         <nav className="my-3 container d-flex justify-content-between">
-          <button className="btn border border-dark">ذخیره</button>
+       
+          <button
+            onClick={() => this.handleSetvalue()}
+            className="btn border border-dark"
+          >
+            ذخیره
+          </button>
           <h4>مدیریت موجودی و قیمت ها</h4>
         </nav>
         <div className="container ">
