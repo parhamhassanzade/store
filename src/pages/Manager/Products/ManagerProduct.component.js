@@ -13,9 +13,9 @@ class ManagerProduct extends Component {
     this.getAllData();
   }
 
-  handleDelete(rowId){
+  handleDelete(rowId) {
     const arrayCopy = this.state.Showproduct.filter((row) => row.id !== rowId);
-    this.setState({Showproduct: arrayCopy});
+    this.setState({ Showproduct: arrayCopy });
   }
 
   async getAllData() {
@@ -59,10 +59,16 @@ class ManagerProduct extends Component {
             {row.parentgroup}/{row.grop}
           </td>
           <td className="d-flex justify-content-center">
-            <a className="ms-2" href="#">
+            <a className="ms-2" style={{ textDecoration: "none" }} href="#">
               ویرایش{" "}
             </a>
-            <a href="#"onClick={()=>this.handleDelete(row.id)}>حذف</a>
+            <a
+              href="#"
+              style={{ textDecoration: "none" }}
+              onClick={() => this.handleDelete(row.id)}
+            >
+              حذف
+            </a>
           </td>
         </tr>
       );
