@@ -16,6 +16,7 @@ class ManagerProduct extends Component {
   handleDelete(rowId) {
     const arrayCopy = this.state.Showproduct.filter((row) => row.id !== rowId);
     this.setState({ Showproduct: arrayCopy });
+    alert('item deleted')
   }
 
   async getAllData() {
