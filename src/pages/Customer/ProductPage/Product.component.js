@@ -24,7 +24,7 @@ class Product extends Component {
   }
   async componentDidMount() {
     this.setState({ Data: await this.getData() });
-    this.setState({ PoductData:await this.state.Data[0] });
+    this.setState({ PoductData: await this.state.Data[0] });
   }
   async getData() {
     const axios = require("axios");
@@ -66,7 +66,7 @@ class Product extends Component {
                 </CardText>
                 <CardText>
                   <small className="text-muted">
-                    قیمت: {this.state.PoductData.price}{" "}
+                    قیمت: {this.state.PoductData.price} تومان
                   </small>
                 </CardText>
                 <div>
@@ -74,16 +74,30 @@ class Product extends Component {
                     <FaPlusCircle className="m-1" />
                     افزودن به سید خرید
                   </Button>
-                  <input
-                    type="number"
-                    placeholder="0"
-                    style={{
-                      width: "50px",
-                      marginLeft: "15px",
-                      border: "1px solid black",
-                      borderRadius: "10px",
-                    }}
-                  />
+                  {this.state.PoductData.Inventory > 0 ? (
+                    <input
+                      min="0"
+                      max={this.state.PoductData.Inventory}
+                      type="number"
+                      placeholder="0"
+                      style={{
+                        width: "50px",
+                        marginLeft: "15px",
+                        border: "1px solid black",
+                        borderRadius: "10px",
+                      }}
+                    />
+                  ) : (
+                    <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bolder",
+                        marginLeft: "12px",
+                      }}
+                    >
+                      عدم موجودی
+                    </span>
+                  )}
                 </div>
               </div>
               <div
@@ -96,6 +110,7 @@ class Product extends Component {
                 className="d-flex justify-content-end"
               >
                 <img
+                alt="product image"
                   sytyle={{
                     height: "100%",
                     width: "100%",
