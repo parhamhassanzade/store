@@ -8,10 +8,12 @@ class CustomerHeader extends Component {
     return (
       <header className="border-bottom  border-dark">
         <nav className="navbar d-flex flex-row-reverse navbar-expand-lg  bg-light p-3">
-          <h1 style={{ fontSize: "x-large" }} className="navbar-brand">
-            پی شاپ
-            <FaPinterest className="ms-4" />
-          </h1>
+          <Link className="nav-link" style={{ color: "unset" }} to="/">
+            <h1 style={{ fontSize: "x-large" }} className="navbar-brand">
+              پی شاپ
+              <FaPinterest className="ms-4" />
+            </h1>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -38,7 +40,7 @@ class CustomerHeader extends Component {
               </li>
               <li className="nav-item ms-5">
                 <Link className="nav-link" to="/manager/login">
-                    مدیریت
+                  مدیریت
                   <span style={{ fontSize: "x-large" }}>
                     <FcManager />
                   </span>
