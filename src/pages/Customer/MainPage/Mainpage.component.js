@@ -50,7 +50,7 @@ class MainPage extends Component {
         <div>
           <Link
             to="/coustomer/productspage/لبنیات"
-            style={{ textDecoration: "none" }}
+            style={{ textDecoration: "none" ,color:"unset"}}
             className="d-flex justify-content-end flex-wrap m-5"
           >
             <h2>محصولات گروه لبنیات</h2>
@@ -77,7 +77,7 @@ class MainPage extends Component {
         <div>
           <Link
             to="/coustomer/productspage/کالاهای اساسی و خواروبار"
-            style={{ textDecoration: "none" }}
+            style={{ textDecoration: "none" ,color:"unset"}}
             className="d-flex justify-content-end flex-wrap m-5 "
           >
             <h2>محصولات گروه کالاهای اساسی و خواروبار </h2>
