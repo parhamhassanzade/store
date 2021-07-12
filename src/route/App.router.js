@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { MainPage, Product, Basket,ProductsPage } from "../pages/Customer/PageController";
+import { MainPage, Product, Basket,ProductsPage,Checkout } from "../pages/Customer/PageController";
 
 import {
   Login,
@@ -27,6 +27,9 @@ class Router extends Component {
           </Route>
           <Route path="/coustomer/basket">
             <Basket />
+          </Route>
+          <Route path="/coustomer/Checkout">
+            <Checkout />
           </Route>
           <Route path="/manager/login">
             <Login />

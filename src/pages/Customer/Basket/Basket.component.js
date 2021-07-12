@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { CustomerHeader } from "../../../layout/PageController";
+import { Link } from "react-router-dom";
 class Basket extends Component {
   render() {
     return (
@@ -46,7 +47,9 @@ class Basket extends Component {
               <span>جمع کل: 125000 تومان</span>
             </div>
             <div class="col-sm d-flex justify-content-end">
+              <Link to="/coustomer/Checkout">
               <button className="btn btn-success">نهایی کردن سبد خرید</button>
+              </Link>
             </div>
           </div>
         </div>
