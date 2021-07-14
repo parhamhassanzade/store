@@ -4,3 +4,4 @@ export{Payment} from "./Payment/Payment.component";
 export{MainPage} from "./MainPage/Mainpage.component";
 export{Product} from "./ProductPage/Product.component";
 export{ProductsPage} from "./ProductPage/ProductsPage.component";
+

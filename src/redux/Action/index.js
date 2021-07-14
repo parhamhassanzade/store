@@ -1,10 +1,10 @@
-const ADD = () => {
+export const ADD = () => {
   return {
     type: "add",
   };
 };
 
-const DELETE = () => {
+export const DELETE = () => {
   return {
     type: "detele",
   };
