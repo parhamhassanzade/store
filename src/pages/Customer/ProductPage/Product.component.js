@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { CustomerHeader } from "../../../layout/PageController";
 import { FaPlusCircle } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
-import { ADD } from "../../../redux/Action";
+import { ADD } from "../../../redux/Action/index";
 import { Card, CardBody, Button, CardTitle, CardText } from "reactstrap";
 
 function Product() {
@@ -52,7 +52,7 @@ function Product() {
                   </CardText>
                   <div>
                     {item.Inventory > 0 ? (
-                      <Button onClick={() => dispatch(ADD())} color="success">
+                      <Button onClick={() => dispatch(ADD(item))} color="success">
                         <FaPlusCircle className="m-1" />
                         افزودن به سید خرید
                       </Button>

@@ -1,6 +1,7 @@
-export const ADD = () => {
+export const ADD = (data) => {
   return {
     type: "add",
+    payload:data
   };
 };
 

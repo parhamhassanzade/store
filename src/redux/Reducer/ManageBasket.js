@@ -1,8 +1,22 @@
-import { ADD,DELETE } from "../Action";
-const ManageBasket = (state = 0, action) => {
+let initialState = {
+  product: [],
+  ManageBasket: 0,
+};
+const ManageBasket = (state = initialState, action) => {
   switch (action.type) {
     case "add":
-      return state + 1;
+      console.log(state, action);
+      return {
+        ...state,
+        product: [
+          ...state.product,
+          {
+            index: action.payload,
+          },
+        ],
+        ManageBasket: state.ManageBasket + 1,
+      };
+
     case "delete":
       return state - 1;
     default:
@@ -10,4 +24,4 @@ const ManageBasket = (state = 0, action) => {
   }
 };
 
-export  {ManageBasket};
+export { ManageBasket };

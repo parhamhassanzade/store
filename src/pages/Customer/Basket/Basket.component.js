@@ -1,8 +1,9 @@
 import { Component } from "react";
 import { CustomerHeader } from "../../../layout/PageController";
 import { Link } from "react-router-dom";
-class Basket extends Component {
-  render() {
+
+function Basket (){
+ 
     return (
       <wrapper>
         <CustomerHeader />
@@ -56,6 +57,6 @@ class Basket extends Component {
       </wrapper>
     );
   }
-}
+
 
 export { Basket };

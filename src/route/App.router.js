@@ -1,20 +1,29 @@
 import { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { MainPage, Product, Basket,ProductsPage,Checkout } from "../pages/Customer/PageController";
+import { Provider } from "react-redux";
+import store from './../redux/store';
+import {
+  MainPage,
+  Product,
+  Basket,
+  ProductsPage,
+  Checkout,
+} from "../pages/Customer/PageController";
 
 import {
+
   Login,
   OrderWait,
   OrderDone,
   ManagerProduct,
   Quntity,
-  
 } from "../pages/Manager/PageController";
 
 class Router extends Component {
   render() {
     return (
       <BrowserRouter>
+      <Provider store={store}>
         <Switch>
           <Route path="/" exact={true}>
             <MainPage />
@@ -22,7 +31,7 @@ class Router extends Component {
           <Route path="/coustomer/product">
             <Product />
           </Route>
-          <Route path="/coustomer/productspage" >
+          <Route path="/coustomer/productspage">
             <ProductsPage />
           </Route>
           <Route path="/coustomer/basket">
@@ -51,6 +60,7 @@ class Router extends Component {
             <div>404</div>
           </Route>
         </Switch>
+</Provider>
       </BrowserRouter>
     );
   }
