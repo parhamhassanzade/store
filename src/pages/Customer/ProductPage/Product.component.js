@@ -8,6 +8,7 @@ import { Card, CardBody, Button, CardTitle, CardText } from "reactstrap";
 function Product() {
   //?initial state
   const [Data, setData] = useState([]);
+  const [number, setNumber] = useState([]);
 
   useEffect(async () => {
     await getData();
@@ -52,7 +53,7 @@ function Product() {
                   </CardText>
                   <div>
                     {item.Inventory > 0 ? (
-                      <Button onClick={() => dispatch(ADD(item))} color="success">
+                      <Button onClick={() => dispatch(ADD(item,number))} color="success">
                         <FaPlusCircle className="m-1" />
                         افزودن به سید خرید
                       </Button>
@@ -62,6 +63,7 @@ function Product() {
 
                     {item.Inventory > 0 ? (
                       <input
+                      onBlur={(e)=>{setNumber(e.target.value)}}
                         min="0"
                         max={item.Inventory}
                         type="number"

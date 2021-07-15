@@ -12,6 +12,7 @@ const ManageBasket = (state = initialState, action) => {
           ...state.product,
           {
             index: action.payload,
+            number:action.numberOFproducts
           },
         ],
         ManageBasket: state.ManageBasket + 1,

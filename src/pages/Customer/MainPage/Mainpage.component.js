@@ -59,6 +59,7 @@ class MainPage extends Component {
             {this.state.Dairy.map((item, index) => {
               return (
                 <Link
+                key={index}
                   style={{ textDecoration: "none" }}
                   to={`/coustomer/product/${item.name}`}
                 >
@@ -86,6 +87,7 @@ class MainPage extends Component {
             {this.state.essentialProducts.map((item, index) => {
               return (
                 <Link
+                key={index}
                   style={{ textDecoration: "none" }}
                   to={`/coustomer/product/${item.name}`}
                 >

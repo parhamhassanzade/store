@@ -1,7 +1,8 @@
-export const ADD = (data) => {
+export const ADD = (data,np) => {
   return {
     type: "add",
-    payload:data
+    payload:data,
+    numberOFproducts:np
   };
 };
 
