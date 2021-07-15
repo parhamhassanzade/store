@@ -6,8 +6,11 @@ export const ADD = (data,np) => {
   };
 };
 
-export const DELETE = () => {
+export const DELETE = (PN,PP) => {
+
   return {
     type: "detele",
+    productName:PN,
+    productPrice:PP
   };
 };
