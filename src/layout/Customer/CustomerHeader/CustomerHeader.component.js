@@ -34,6 +34,7 @@ function CustomerHeader(props) {
           <div className="collapse navbar-collapse" id="navbarText">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active me-5">
+                {!props.show?
                 <Link className="nav-link" to="/coustomer/basket">
                   <span className="badge btn-success p-1 me-2 ">
                     {counter }
@@ -41,6 +42,8 @@ function CustomerHeader(props) {
                   سبد خرید
                   <FaShoppingCart />
                 </Link>
+                :""
+                }
               </li>
               <li className="nav-item ms-5">
                 <Link className="nav-link" to="/manager/login">
