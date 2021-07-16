@@ -88,7 +88,7 @@ class MainPage extends Component {
               return (
                 <Link
                 key={index}
-                  style={{ textDecoration: "none" }}
+                  style={{ textDecoration: "none",marginTop:"15px" }}
                   to={`/coustomer/product/${item.name}`}
                 >
                   <CardPage

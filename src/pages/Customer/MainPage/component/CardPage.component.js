@@ -7,9 +7,10 @@ class CardPage extends Component {
         <Card
           style={{
             width: "auto",
-            boxShadow: "-1px 0px 20px 4px ",
+            boxShadow: "-1px 0px 20px 4px black ",
             borderRadius: "15px",
             margin: "0 0 2% 10%",
+
           }}
         >
           <CardBody className="d-flex justify-content-end">
