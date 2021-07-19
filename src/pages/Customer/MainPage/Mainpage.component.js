@@ -47,7 +47,7 @@ class MainPage extends Component {
     return (
       <>
         <CustomerHeader />
-        <div>
+        <div >
           <Link
             to="/coustomer/productspage/لبنیات"
             style={{ textDecoration: "none" ,color:"unset"}}
@@ -55,7 +55,7 @@ class MainPage extends Component {
           >
             <h2>محصولات گروه لبنیات</h2>
           </Link>
-          <section className="d-flex justify-content-end flex-wrap m-5">
+          <section className="d-flex justify-content-end  flex-wrap m-5">
             {this.state.Dairy.map((item, index) => {
               return (
                 <Link

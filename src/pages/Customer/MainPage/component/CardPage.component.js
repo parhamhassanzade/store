@@ -6,10 +6,10 @@ class CardPage extends Component {
       <>
         <Card
           style={{
-            width: "auto",
+            width: "250px",
             boxShadow: "-1px 0px 20px 4px black ",
             borderRadius: "15px",
-            margin: "0 0 2% 10%",
+            margin: "0 10px 2px 10px",
 
           }}
         >
@@ -18,9 +18,9 @@ class CardPage extends Component {
               id="infoBox"
               className="d-flex flex-column align-items-end justify-content-center "
             >
-              <CardTitle tag="h5">{this.props.lable}</CardTitle>
+              <CardTitle tag="h6">{this.props.lable}</CardTitle>
               <CardText>
-                <small className="text-muted">قیمت: {this.props.price} </small>
+                <small className="text-muted">قیمت: {this.props.price} تومان </small>
               </CardText>
             </div>
             <div
