@@ -1,45 +1,44 @@
 import { CustomerHeader } from "../../../layout/PageController";
 import { Link } from "react-router-dom";
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import React, { useState, useEffect } from "react";
 import { DELETE } from "../../../redux/Action/index";
 import { set } from "lodash";
 
 const Basket = () => {
   const products = useSelector((state) => state);
-const dispach=useDispatch()
+  const dispach = useDispatch();
   console.log(products);
 
- let x=[];
-    const CreateRow = () => {
-      return products.product.map((item, index) => {
-        return (
-          <tr key={index}>
-            <th scope="row">{item.index.name}</th>
-            <td>{item.index.price}تومان</td>
-            <td>{item.number}</td>
-            <td>
-              {item.index.price * item.number
-             
+  let x = [];
+  const CreateRow = () => {
+    return products.product.map((item, index) => {
+      return (
+        <tr key={index}>
+          <th scope="row">{item.index.name}</th>
+          <td>{item.index.price}تومان</td>
+          <td>{item.number}</td>
+          <td>
+            {item.index.price * item.number}
+            تومان
+          </td>
+          <td>
+            <sapn
+              className="btn"
+              onClick={() =>
+                dispach(DELETE(item.index.name, item.index.price * item.number))
               }
-              تومان
-            </td>
-            <td>
-              <sapn className="btn" onClick={()=>dispach(DELETE(item.index.name,item.index.price * item.number))} >حذف</sapn>
-            </td>
-          </tr>
-        );
-      });
-    };
-
-
-
-
+            >
+              حذف
+            </sapn>
+          </td>
+        </tr>
+      );
+    });
+  };
 
   return (
     <>
-
-
       <CustomerHeader />
       <div className="container" dir="rtl">
         <div className="row">
