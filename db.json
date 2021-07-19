@@ -362,5 +362,13 @@
       "title": "برنج",
       "groupTitle": "کالاهای اساسی و خواروبار"
     }
+  ],
+  "users": [
+    {
+      "name": "parham",
+      "username": "parhamhzd",
+      "password": "123456789",
+      "role": "admin"
+    }
   ]
 }
