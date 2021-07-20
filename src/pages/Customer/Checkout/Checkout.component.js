@@ -5,7 +5,20 @@ import { useDispatch } from "react-redux";
 import { usersInfo } from "../../../redux/Action/index";
 function Checkout() {
   //?state
-  const [userinfo, setUserInfo] = useState([]);
+  const [userinfo, setUserInfo] = useState({
+    Fname: "",
+    Lname: "",
+    phone: 0,
+    Address: "",
+    time: 0,
+  });
+
+  function handlechange(statetype, newvalu) {
+    setUserInfo({
+      ...userinfo,
+      [statetype]: newvalu,
+    });
+  }
 
   const dsipatch = useDispatch();
   return (
@@ -25,24 +38,25 @@ function Checkout() {
                 style={{ border: "2px solid black" }}
                 required
                 onBlur={(e) => {
-                  setUserInfo({ ...userinfo, Fname: e.target.value });
+                  handlechange(e.target.name, e.target.value);
                 }}
               />
               <lable className="mt-3">ادرس:</lable>
               <textarea
+                name="Address"
                 onBlur={(e) => {
-                  setUserInfo({ ...userinfo, Address: e.target.value });
+                  handlechange(e.target.name, e.target.value);
                 }}
                 style={{ border: "2px solid black" }}
               />
               <lable className="mt-3">تاریخ تحویل:</lable>
               <input
                 type="date"
-                name="date"
+                name="time"
                 style={{ border: "2px solid black" }}
                 required
                 onBlur={(e) => {
-                  setUserInfo({ ...userinfo, time: e.target.value });
+                  handlechange(e.target.name, e.target.value);
                 }}
               />
             </div>
@@ -54,7 +68,7 @@ function Checkout() {
                 style={{ border: "2px solid black" }}
                 required
                 onBlur={(e) => {
-                  setUserInfo({ ...userinfo, Lname: e.target.value });
+                  handlechange(e.target.name, e.target.value);
                 }}
               />
               <lable className="mt-3">تلفن همراه :</lable>
@@ -69,7 +83,7 @@ function Checkout() {
                 maxlength="11"
                 placeholder="*********09"
                 onBlur={(e) => {
-                  setUserInfo({ ...userinfo, phone: e.target.value });
+                  handlechange(e.target.name, e.target.value);
                 }}
               />
             </div>
@@ -78,7 +92,9 @@ function Checkout() {
                 <button
                   type="submit"
                   className="btn btn-success"
-                  onClick={() => {dsipatch(usersInfo(userinfo))}}
+                  onClick={() => {
+                    dsipatch(usersInfo(userinfo));
+                  }}
                 >
                   ثبت خرید
                 </button>
