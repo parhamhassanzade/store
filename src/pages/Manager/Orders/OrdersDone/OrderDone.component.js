@@ -1,6 +1,8 @@
 import { Component } from "react";
 import { ManagerHeader } from "../../../../layout/PageController";
 import { Link } from "react-router-dom";
+import { ModalOrderD } from "./OrdersDone-Modal/ModalOrderD.component";
+
 class OrderDone extends Component {
   constructor(props) {
     super(props);
@@ -47,7 +49,7 @@ class OrderDone extends Component {
             {this.DateConvertor(row.orderRegister)}
           </td>
           <td className="text-center">
-            <a href="#">بررسی سفارش</a>
+          <ModalOrderD   buttonLabel={"بررسی سفارش"} userName={row}/>
           </td>
         </tr>
       );

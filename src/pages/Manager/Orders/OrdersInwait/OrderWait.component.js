@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { ManagerHeader } from "../../../../layout/PageController";
 import { Link } from "react-router-dom";
+import { ModalOrderW } from "./OrdersInwait-Modal/ModalOrderW.component";
 
 class OrderWait extends Component {
   constructor(props) {
@@ -41,6 +42,7 @@ class OrderWait extends Component {
 
   CreateRow() {
     return this.state.OrderWait.map((row, i) => {
+      console.log(row);
       return (
         <tr key={i}>
           <th scope="row">{row.name}</th>
@@ -49,7 +51,7 @@ class OrderWait extends Component {
             {this.DateConvertor(row.orderRegister)}
           </td>
           <td className="text-center">
-            <a href="#">بررسی سفارش</a>
+          <ModalOrderW   buttonLabel={"بررسی سفارش"} userName={row}/>
           </td>
         </tr>
       );

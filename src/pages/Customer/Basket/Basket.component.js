@@ -3,30 +3,26 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import React, { useState, useEffect } from "react";
 import { DELETE } from "../../../redux/Action/index";
-import { set } from "lodash";
 
 const Basket = () => {
   const products = useSelector((state) => state);
   const dispach = useDispatch();
-  console.log(products);
-
-  let x = [];
   const CreateRow = () => {
     return products.product.map((item, index) => {
       return (
         <tr key={index}>
-          <th scope="row">{item.index.name}</th>
-          <td>{item.index.price}تومان</td>
-          <td>{item.number}</td>
+          <th scope="row">{item.name}</th>
+          <td>{item.price}تومان</td>
+          <td>{item.Inventory}</td>
           <td>
-            {item.index.price * item.number}
+            {item.price * item.Inventory}
             تومان
           </td>
           <td>
             <sapn
               className="btn"
               onClick={() =>
-                dispach(DELETE(item.index.name, item.index.price * item.number))
+                dispach(DELETE(item.name, item.price * item.Inventory))
               }
             >
               حذف

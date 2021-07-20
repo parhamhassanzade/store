@@ -5,6 +5,7 @@ let initialState = {
   userInfo: [],
 };
 const ManageBasket = (state = initialState, action) => {
+
   switch (action.type) {
     case "add":
       return {
@@ -12,8 +13,9 @@ const ManageBasket = (state = initialState, action) => {
         product: [
           ...state.product,
           {
-            index: action.payload,
-            number: action.numberOFproducts,
+            name: action.payload.name,
+            price:action.payload.price,
+            Inventory: action.numberOFproducts,
           },
         ],
         ManageBasket: state.ManageBasket + 1,
