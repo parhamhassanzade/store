@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { CustomerHeader } from "../../../layout/PageController";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { usersInfo } from "../../../redux/Action/index";
 function Checkout() {
+
+  //?redux store sate
+  const products = useSelector((state) => state);
+
   //?state
   const [userinfo, setUserInfo] = useState({
     Fname: "",
@@ -19,6 +23,24 @@ function Checkout() {
       [statetype]: newvalu,
     });
   }
+
+  const postData = async () => {
+    let axios = require("axios");
+    await axios
+      .post("http://localhost:3000/Order", {
+        name: userinfo.Fname + userinfo.Lname,
+        address: userinfo.Address,
+        phone: userinfo.phone,
+        deliverTime: userinfo.time,
+        position:"wait",
+        totalPrice:products.totalPrice,
+        basket:products.product
+      })
+      .then((res) => res.data)
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const dsipatch = useDispatch();
   return (
@@ -94,6 +116,7 @@ function Checkout() {
                   className="btn btn-success"
                   onClick={() => {
                     dsipatch(usersInfo(userinfo));
+                    postData()
                   }}
                 >
                   ثبت خرید
