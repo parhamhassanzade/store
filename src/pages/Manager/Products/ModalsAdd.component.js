@@ -12,28 +12,46 @@ const ModalsAdd = (props) => {
   const { buttonLabel, className } = props;
 
   const [modal, setModal] = useState(false);
+
   const [state, setSate] = useState({
     name: "",
     parentgroup: "",
     discription: "",
+    avatar: "",
   });
 
+  //update the state.avatar
+  const onfileChange = (event) => {
+    setSate({
+      ...state,
+      avatar: event.target.files[0],
+    });
+  };
+
+;
+
   async function postData() {
+    let formData = new FormData();
+    formData.append("avatar", state.avatar.name);
+
+
+
     let axios = require("axios");
-  await  axios
+    await axios
       .post("http://localhost:3000/Products", {
         name: state.name,
         parentgroup: state.parentgroup,
         discription: state.discription,
+        avatar: state.avatar.name,
       })
       .then((res) => res.data)
       .catch((err) => console.log(err));
-      setModal(!modal);
+    setModal(!modal);
   }
 
-  function hanelchange(statetype, newvalu) {
+  function handlechange(statetype, newvalu) {
     setSate({
-        ...state,
+      ...state,
       [statetype]: newvalu,
     });
   }
@@ -49,8 +67,14 @@ const ModalsAdd = (props) => {
         <ModalHeader toggle={toggle}>Modal title</ModalHeader>
         <ModalBody>
           <form dir="rtl" className="d-flex flex-column container ">
-            <lable>تصویر کالا</lable>
-            <input type="file" name="image" />
+            <lable>تصویر کالا :</lable>
+            <input
+              type="file"
+              name="image"
+              onChange={(e) => {
+                onfileChange(e);
+              }}
+            />
 
             <lable> نام کالا:</lable>
             <input
@@ -58,14 +82,14 @@ const ModalsAdd = (props) => {
               type="text"
               name="product"
               onChange={(e) => {
-                hanelchange("name", e.target.value);
+                handlechange("name", e.target.value);
               }}
             />
 
             <lable>دسته بندی:</lable>
             <select
               onChange={(e) => {
-                hanelchange("parentgroup", e.target.value);
+                handlechange("parentgroup", e.target.value);
               }}
             >
               <option></option>
@@ -76,13 +100,13 @@ const ModalsAdd = (props) => {
             <lable>توضیحات:</lable>
             <textarea
               onChange={(e) => {
-                hanelchange("discription", e.target.value);
+                handlechange("discription", e.target.value);
               }}
             />
           </form>
         </ModalBody>
         <ModalFooter className="d-flex justify-content-center">
-          <Button color="success" onClick={()=>postData()}>
+          <Button color="success" onClick={() => postData()}>
             ذخیره
           </Button>
         </ModalFooter>
