@@ -1,5 +1,3 @@
-import { Component } from "react";
-import style from "../CustomerHeader/CustomerHeader.module.scss";
 import { FaShoppingCart, FaPinterest, FaBars } from "react-icons/fa";
 import { FcManager } from "react-icons/fc";
 import { Link } from "react-router-dom";
@@ -10,10 +8,10 @@ function CustomerHeader(props) {
   const counter=useSelector(state=>state.ManageBasket)
 
     return (
-      <header className="border-bottom  border-dark">
-        <nav className="navbar d-flex flex-row-reverse navbar-expand-lg  bg-light p-3">
+      <header  className="border-bottom  border-dark">
+        <nav className="navbar d-flex flex-row-reverse navbar-expand-lg  bg-dark p-3">
           <Link className="nav-link" style={{ color: "unset" }} to="/">
-            <h1 style={{ fontSize: "x-large" }} className="navbar-brand">
+            <h1 style={{ fontSize: "x-large" }} className="navbar-brand text-light ">
               پی شاپ
               <FaPinterest className="ms-4" />
             </h1>
@@ -32,10 +30,10 @@ function CustomerHeader(props) {
             </span>
           </button>
           <div className="collapse navbar-collapse" id="navbarText">
-            <ul className="navbar-nav mr-auto">
+            <ul className="navbar-nav mr-auto align-items-center">
               <li className="nav-item active me-5">
                 {!props.show?
-                <Link className="nav-link" to="/coustomer/basket">
+                <Link className="nav-link text-light" to="/coustomer/basket">
                   <span className="badge btn-success p-1 me-2 ">
                     {counter }
                   </span>
@@ -46,7 +44,7 @@ function CustomerHeader(props) {
                 }
               </li>
               <li className="nav-item ms-5">
-                <Link className="nav-link" to="/manager/login">
+                <Link className="nav-link text-light" to="/manager/login">
                   مدیریت
                   <span style={{ fontSize: "x-large" }}>
                     <FcManager />
