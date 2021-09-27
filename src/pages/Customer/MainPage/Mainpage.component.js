@@ -53,7 +53,7 @@ class MainPage extends Component {
             style={{ textDecoration: "none" ,color:"unset"}}
             className="d-flex justify-content-end flex-wrap m-5"
           >
-            <h2>محصولات گروه لبنیات</h2>
+            <p style={{fontSize:"xx-large",fontWeight:"bolder",fontStyle:"italic"}}>: گروه لبنیات</p>
           </Link>
           <section className="d-flex justify-content-end  flex-wrap m-5">
             {this.state.Dairy.map((item, index) => {
@@ -81,7 +81,7 @@ class MainPage extends Component {
             style={{ textDecoration: "none" ,color:"unset"}}
             className="d-flex justify-content-end flex-wrap m-5 "
           >
-            <h2>محصولات گروه کالاهای اساسی و خواروبار </h2>
+            <h2 style={{fontSize:"xx-large",fontWeight:"bolder",fontStyle:"italic"}}>: گروه کالاهای اساسی و خواروبار </h2>
           </Link>
           <section className="d-flex justify-content-end flex-wrap m-5 ">
             {this.state.essentialProducts.map((item, index) => {
