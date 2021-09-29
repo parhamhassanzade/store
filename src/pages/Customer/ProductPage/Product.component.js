@@ -14,7 +14,6 @@ function Product() {
     await getData();
   }, []);
 
-
   //?get data to show product
   const getData = async () => {
     const axios = require("axios");
@@ -41,7 +40,13 @@ function Product() {
                   id="infoBox"
                   className="d-flex flex-column align-items-end justify-content-center me-5"
                 >
-                  <CardTitle tag="h5">{item.name}</CardTitle>
+                  <CardTitle tag="h4">
+                    <strong
+                      style={{ fontWeight: "bolder", fontStyle: "normal" }}
+                    >
+                      {item.name}
+                    </strong>
+                  </CardTitle>
                   <CardText>
                     <small className="text-muted">{item.parentgroup} </small>
                     <small className="text-muted"> &rsaquo;{item.grop}</small>
@@ -53,7 +58,10 @@ function Product() {
                   </CardText>
                   <div>
                     {item.Inventory > 0 ? (
-                      <Button onClick={() => dispatch(ADD(item,number))} color="success">
+                      <Button
+                        onClick={() => dispatch(ADD(item, number))}
+                        color="success"
+                      >
                         <FaPlusCircle className="m-1" />
                         افزودن به سید خرید
                       </Button>
@@ -63,7 +71,9 @@ function Product() {
 
                     {item.Inventory > 0 ? (
                       <input
-                      onBlur={(e)=>{setNumber(e.target.value)}}
+                        onBlur={(e) => {
+                          setNumber(e.target.value);
+                        }}
                         min="0"
                         max={item.Inventory}
                         type="number"
@@ -86,6 +96,10 @@ function Product() {
                         عدم موجودی
                       </span>
                     )}
+                  </div>
+                  <div id="discription" style={{margin:"5px 0 0 0"}}>
+                    <span>{item.discription}</span>
+                    <h5 style={{ display: "inline-block" }}>&#xa0;:توضیحات </h5>
                   </div>
                 </div>
                 <div
